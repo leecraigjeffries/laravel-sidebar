@@ -1,0 +1,153 @@
+.sidebar {
+  align-items: stretch;
+  background-color: #23282d;
+  display: flex;
+  flex: 0 0 350px;
+  flex-wrap: nowrap;
+  width: 350px;
+
+  a {
+    color: #F1F5F8;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.sidebar-headings {
+  background-color: darken(#23282d, 2);
+  flex: 0 0 90px;
+
+  i {
+    font-size: 2em;
+  }
+
+  a {
+    color: #F1F5F8;
+    display: table-cell;
+    height: 90px;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.15s;
+    vertical-align: middle;
+    width: 90px;
+  }
+
+  a:hover {
+    color: #fff;
+    padding: 4px 0 0 4px;
+    text-decoration: none;
+  }
+
+  li.active a {
+    background-color: #23282d;
+    color: #fff;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+%corner {
+  width: 230px;
+  background-color: #f57c00;
+  margin: 10px;
+  position: relative;
+
+
+  &:after, &:before {
+    content: "";
+    position: absolute;
+    left: 100%;
+    width: 14px;
+    height: 50%;
+  }
+
+  &:before {
+    top: 0;
+    background: linear-gradient(to top right, #f57c00 50%, transparent 51%);
+  }
+
+  &:after {
+    bottom: 0;
+    background: linear-gradient(to bottom right, #f57c00 50%, transparent 51%);
+  }
+
+}
+
+.sidebar-links {
+  flex: 1;
+  padding: 0 1em;
+
+  > ul {
+
+    > li {
+      color: #F4FAFF;
+      font-weight: 700;
+      margin-top: 1em;
+
+      > span {
+        color: #fb8c00;
+        padding-left: 0.125em;
+      }
+
+      > ul {
+
+        > li.active {
+          @extend %corner;
+          background-color: #f57c00;
+          margin: 0.25em 0;
+
+          a {
+            color: #F4FAFF;
+            padding: 0.25em;
+
+            &:hover {
+              color: #fff;
+            }
+          }
+
+          > ul {
+            background-color: #ffa000;
+            margin: 0.25em;
+
+            > li {
+              font-size: 0.95em;
+
+              a {
+                padding: 0 0.125em;
+
+                &:hover {
+                  padding-left: 0.75em;
+                }
+              }
+
+            }
+
+            > li.active {
+
+              a {
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      color: #eceeef;
+      font-weight: normal;
+      padding: 0.125em;
+      transition: 0.15s;
+
+      &:hover {
+        color: #f7f7f9;
+        padding-left: 1em;
+      }
+    }
+  }
+}

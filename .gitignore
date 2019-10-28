@@ -1,0 +1,19 @@
+# PHP packages
+/composer.lock
+/vendor
+
+# phpDocumentor
+/api-docs/
+/phpdoc.xml
+
+# Test output
+/.phpunit.result.cache
+/build/
+/test-coverage/
+/tests/storage/
+
+# Operating system files
+.DS_Store
+
+# PhpStorm
+/.idea

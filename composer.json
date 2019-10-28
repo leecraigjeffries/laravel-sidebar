@@ -1,0 +1,35 @@
+{
+    "name": "leecraigjeffries/laravel-sidebar",
+    "description": "Laravel Sidebar",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lee Jeffries",
+            "email": "leecjeffries@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "LeeCraigJeffries\\Sidebar\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1.3",
+        "illuminate/support": "^5.6|^6.0",
+        "illuminate/view": "^5.6|^6.0",
+        "facade/ignition-contracts": "^1.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LeeCraigJeffries\\Sidebar\\SidebarServiceProvider"
+            ],
+            "aliases": {
+                "Sidebar": "LeeCraigJeffries\\Sidebar\\Facades\\Sidebar"
+            }
+        }
+    }
+}
