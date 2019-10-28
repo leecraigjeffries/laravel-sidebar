@@ -7,12 +7,14 @@
     class SidebarServiceProvider extends ServiceProvider
     {
 
-        public function isDeferred()
+        /**
+         * @return bool
+         */
+        public function isDeferred(): bool
         {
-            // Remove this and uncomment DeferrableProvider after dropping support
-            // for Laravel 5.7 and below
             return true;
         }
+
         /**
          * Get the services provided for deferred loading.
          *
@@ -22,7 +24,7 @@
         {
             return [SidebarManager::class];
         }
-        
+
         public function register(): void
         {
             // Load the default config values
