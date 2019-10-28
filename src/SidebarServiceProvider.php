@@ -7,7 +7,6 @@
 
     class SidebarServiceProvider extends ServiceProvider
     {
-
         /**
          * @return bool
          */

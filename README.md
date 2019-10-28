@@ -1,4 +1,4 @@
-### 1. Install Laravel Breadcrumbs
+### 1. Install Laravel Sidebar
 
 Run this at the command line:
 
