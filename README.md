@@ -23,7 +23,7 @@ Create a file called `routes/sidebar.php` that looks like this:
                 $heading->push('Link', '#link', null, static function($link){
                 
                 // Links can be embedded endlessly    
-                $link->push('Sub Link', '#welcome')->setActive();
+                $link->push('Sub Link', '#sublink')->setActive();
                 });
             });
         });
