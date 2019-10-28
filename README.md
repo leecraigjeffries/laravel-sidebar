@@ -34,3 +34,13 @@ Create a file called `routes/sidebar.php` that looks like this:
 ```php
 {!! Sidebar::render('default') !!}
 ```
+
+The `link` variable will be used in the chosen view
+
+### 4. Active Links
+By using `$link->getHasActiveChild()` the view will know that the link has a child embedded that is active
+
+To see whether a link is active you can use `$link->getActive()`
+
+### 5. Publishing the SASS and view file
+By running `php artisan vendor:publish` you can publish example view and SASS files
