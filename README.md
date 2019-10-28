@@ -17,7 +17,7 @@ Create a file called `routes/sidebar.php` that looks like this:
     /// Parameters: sidebar name, path to view
     Sidebar::register('default', 'vendor.sidebar.default', static function ($sidebar) {
         
-    // Text  , name of route or href, extra properties
+    // Text, name of route or href, extra properties
     $sidebar->push('Section', '#section', ['icon' => '<i class="far fa-flag"></i>'], static function ($group) {
             $group->push('Heading', '', null, static function ($heading) {
                 $heading->push('Link', '#link', null, static function($link){
