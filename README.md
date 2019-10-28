@@ -8,7 +8,7 @@ composer require leecraigjeffries/laravel-sidebar
 
 This will update `composer.json` and install the package into the `vendor/` directory.
 
-### 2. Define your breadcrumbs
+### 2. Define your sidebars
 
 Create a file called `routes/sidebar.php` that looks like this:
 

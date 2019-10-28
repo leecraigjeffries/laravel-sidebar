@@ -2,6 +2,7 @@
 
     namespace LeeCraigJeffries\Sidebar;
 
+    use Illuminate\Contracts\Container\BindingResolutionException;
     use Illuminate\Support\ServiceProvider;
 
     class SidebarServiceProvider extends ServiceProvider
@@ -25,6 +26,11 @@
             return [SidebarManager::class];
         }
 
+        /**
+         * Register the service provider.
+         *
+         * @return void
+         */
         public function register(): void
         {
             // Load the default config values
@@ -36,9 +42,6 @@
                 $configFile => config_path('sidebar.php')
             ], 'sidebar-config');
 
-            // Register Manager class singleton with the app container
-            $this->app->singleton(SidebarManager::class, SidebarManager::class);
-
             // Register 'sidebar::' view namespace
             $this->loadViewsFrom(__DIR__ . '/../views/', 'sidebar');
 
@@ -48,6 +51,12 @@
             ]);
         }
 
+        /**
+         * Bootstrap the application events.
+         *
+         * @return void
+         * @throws BindingResolutionException
+         */
         public function boot(): void
         {
             // Load the routes/sidebar.php file, or other configured file(s)
@@ -67,6 +76,7 @@
 
             // Support both a single string filename and an array of filenames (e.g. returned by glob())
             foreach ((array)$files as $file) {
+                /** @noinspection PhpIncludeInspection */
                 require_once $file;
             }
         }
