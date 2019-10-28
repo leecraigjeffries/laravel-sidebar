@@ -35,9 +35,11 @@ Create a file called `routes/sidebar.php` that looks like this:
 {!! Sidebar::render('default') !!}
 ```
 
-The `link` variable will be used in the chosen view
+The `$link` variable will be used in the chosen view
 
 ### 4. Active Links
+Active links are links that have the same route name as that which is currently in use
+
 By using `$link->getHasActiveChild()` the view will know that the link has a child embedded that is active
 
 To see whether a link is active you can use `$link->getActive()`
